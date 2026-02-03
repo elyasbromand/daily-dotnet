@@ -1,7 +1,5 @@
-﻿string firstName = "John";
-string lastName = "Heisenberg";
+﻿string userName = "Bob";
 
-Console.WriteLine(firstName + " " + lastName);
+string message = $"Hello {userName}";
 
-
-// You should avoid using intermidiate variables when concatinating strings, unless you need to reuse them later in the code.
+Console.Write($@"message: \\ {message}");
