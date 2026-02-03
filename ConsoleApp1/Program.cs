@@ -1,5 +1,3 @@
-﻿string userName = "Bob";
+﻿int fahrenheit = 94;
 
-string message = $"Hello {userName}";
-
-Console.Write($@"message: \\ {message}");
+Console.WriteLine("The tempreture is " + ((fahrenheit - 32) * ((float)5/9)) + " Celsius.");
