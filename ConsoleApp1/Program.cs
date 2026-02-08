@@ -1,9 +1,4 @@
-﻿string firstFriend = "   Scott";
-string secondFriend = "Chris   ";
-
-string Friend = $"My friends are {firstFriend.Trim()} and {secondFriend.Trim()}.";
-//it changes all of the occurrences of friends to Buddies
-Console.WriteLine(Friend.Replace("friends", "Buddies"));
-// The original variable is not changed
-Console.Write(Friend);
-
+﻿int x = 2100000000;
+int y = 2100000000;
+int z = x + y;
+Console.Write(z);
