@@ -1,4 +1,4 @@
-﻿double x = 21.43; //Natural type
-float y = 12.12; //This needs conversion, since it cannot convert float to double implicitly
+﻿decimal x = 21.43M; //Explicit type
+decimal y = 12.12M; //Explicit type
 long z = checked(x + y);
 Console.Write(z);
