@@ -1,16 +1,12 @@
-﻿//List<T> being prounouced as list of T, where T is the type of elements in the list. It is a generic collection that can hold any type of data. The list provides various methods to manipulate the data, such as adding, removing, and searching for elements. It is a dynamic array that can grow or shrink in size as needed. The list is part of the System.Collections.Generic namespace in C#.
+// Arrays. 
+var names = new string[] {"Scott", "John", "Jane"};
+
+//names.Add("Marry"); // this is how we add to a list, but not to an array.
+
+names = [..names, "Marry"]; //this is how you add to an array. We create a new array with the existing elements and add the new element at the end. and we assign the reference of the new array to the original variable.
 
 
-
-List<string> names = ["Ahmad", "Jourdan"];
-
-names.Add("Walid");
-names.Remove("Ahmad");
-names.Add("Ali");
-
-foreach (var name in names)
+foreach( var name in names)
 {
     Console.WriteLine(name);
 }
-
-Console.Write(names[0]);
