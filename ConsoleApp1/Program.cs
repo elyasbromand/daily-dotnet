@@ -1,12 +1,19 @@
-// Arrays. 
-var names = new string[] {"Scott", "John", "Jane"};
-
-//names.Add("Marry"); // this is how we add to a list, but not to an array.
-
-names = [..names, "Marry"]; //this is how you add to an array. We create a new array with the existing elements and add the new element at the end. and we assign the reference of the new array to the original variable.
+// Specify the data source.
+List<int> scores = [97, 92, 81, 60];
 
 
-foreach( var name in names)
+return;
+
+// Define the query expression.
+IEnumerable<int> scoreQuery =
+    from score in scores
+    where score > 80
+    select score;
+
+// Execute the query.
+foreach (var i in scoreQuery)
 {
-    Console.WriteLine(name);
+    Console.Write(i + " ");
 }
+
+// Output: 97 92 81
