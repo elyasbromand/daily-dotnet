@@ -1,19 +1,17 @@
 // Specify the data source.
-List<int> scores = [97, 92, 81, 60];
+List<int> scores = [97, 92, 81, 60, 100, 99, 95, 88];
 
-// Define the query expression. it is deffered execution, it is not executed until the foreach statement is executed.
-// LINQ returns an IEnumerable<T> and it is foreachable.
-IEnumerable<int> scoreQuery =
+// you can use string interpolation inside LINQ and have a type string from a list of int.
+IEnumerable<string> scoreQuery =
     from score in scores
     where score > 80
-    select score;
-
-scores.Add(99); // this will also be included in the query because the query is not executed until the foreach statement is executed.
+    orderby score ascending
+    select $"Score is {score}";
 
 // Execute the query. Now the LINQ is executed. 
 foreach (var i in scoreQuery)
 {
-    Console.Write(i + " ");
+    Console.WriteLine(i);
 }
 
 // Output: 97 92 81
