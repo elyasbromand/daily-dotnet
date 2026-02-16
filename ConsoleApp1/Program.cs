@@ -1,17 +1,17 @@
-// Specify the data source.
-List<int> scores = [97, 92, 81, 60, 100, 99, 95, 88];
-
-// you can use string interpolation inside LINQ and have a type string from a list of int.
-IEnumerable<string> scoreQuery =
-    from score in scores
-    where score > 80
-    orderby score ascending
-    select $"Score is {score}";
-
-// Execute the query. Now the LINQ is executed. 
-foreach (var i in scoreQuery)
+Console.WriteLine("Hello, OOP!");
+// old way of creating a class and object
+var p1 = new Person()
 {
-    Console.WriteLine(i);
-}
+    firstName = "John",
+    lastName = "Doe",
+    birthDate = new DateOnly(1990, 1, 1)
+};
 
-// Output: 97 92 81
+public class Person
+{
+    public string firstName;
+
+    public string lastName;
+    
+    public DateOnly birthDate;
+}
