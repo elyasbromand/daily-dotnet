@@ -1,17 +1,12 @@
 Console.WriteLine("Hello, OOP!");
-// old way of creating a class and object
-var p1 = new Person()
-{
-    firstName = "John",
-    lastName = "Doe",
-    birthDate = new DateOnly(1990, 1, 1)
-};
+// new way of creating class and object
+var p1 = new Person("John", "Doe", new DateOnly(1990, 1, 1));
 
-public class Person
-{
-    public string firstName;
+Console.WriteLine($"Name: {p1.First} {p1.Last}, Birth Date: {p1.Bd}");
 
-    public string lastName;
-    
-    public DateOnly birthDate;
+public class Person (string firstName, string lastName, DateOnly birthDate)
+{
+    public string First { get; } = firstName;
+    public string Last { get;  } = lastName;
+    public DateOnly Bd { get; } = birthDate;
 }
