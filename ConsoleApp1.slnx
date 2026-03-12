@@ -2,4 +2,7 @@
   <Folder Name="/P1/">
     <Project Path="P1/ConsoleApp1/ConsoleApp1.csproj" />
   </Folder>
+  <Folder Name="/P2/">
+    <Project Path="P2/ConsoleApp1/ConsoleApp1.csproj" />
+  </Folder>
 </Solution>
