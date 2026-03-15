@@ -1,15 +1,23 @@
-﻿// implicit conversion
+﻿// needs to be either "true" or "false"
+string myBoolString = "TRUE";
 
-int myInt = 1123123123;
+bool myBool = Convert.ToBoolean(myBoolString);
 
-double myDouble = myInt;
+Console.Write(myBool);
 
-long myLong = myInt;
+int num1 = 5;
 
-// explicit conversion - casting
+int num2 = int.Parse(Console.ReadLine() ?? "0");
 
-myLong = 1210000012312312112;
+System.Console.WriteLine("Addition num1 and num2 is " + num1 * num2);
 
-int myInt2 = (int)myLong;
+if (true && true)
+{
+    System.Console.WriteLine("And is working");
+}
 
-myInt2 = (int)myDouble;
+//XOR is true if one of the values is true but not both
+if (true ^ false)
+{
+    System.Console.WriteLine("Xor Working");
+}
