@@ -25,3 +25,12 @@ switch (month)
         break;
 }
 ;
+
+
+
+
+Console.WriteLine(monthName);
+
+System.Console.WriteLine("Hello, decimals");
+
+System.Console.WriteLine(10.0f % 3.0f);
