@@ -5,6 +5,7 @@
   <Folder Name="/P2/">
     <Project Path="P2/ConsoleApp1/ConsoleApp1.csproj" />
   </Folder>
+  <Project Path="calculator1/calculator1.csproj" />
   <Project Path="Switch/Switch.csproj" />
   <Project Path="TryParse/TryParse.csproj" />
 </Solution>

@@ -26,9 +26,6 @@ switch (month)
 }
 ;
 
-
-
-
 Console.WriteLine(monthName);
 
 System.Console.WriteLine("Hello, decimals");
