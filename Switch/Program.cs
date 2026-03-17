@@ -1,6 +1,7 @@
 ﻿string monthName;
 
-int month = int.Parse(Console.ReadLine());
+// The exclamation mark is used to indicate that the value will not be null, so it tells the compiler to ignore any potential null reference warnings.
+int month = int.Parse(Console.ReadLine()!);
 
 //New switch expression syntax
 monthName = month switch
@@ -22,4 +23,5 @@ switch (month)
     default:
         monthName = "Invalid month";
         break;
-};
+}
+;
