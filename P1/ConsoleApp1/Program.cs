@@ -1,4 +1,7 @@
-﻿float myNumber = 0;
-myNumber = float.Parse(Console.ReadLine());
+﻿int[] myArray = [1, 2, 3, 4];
+myArray[4] = 5;
 
-Console.Write(myNumber);
+foreach (var item in myArray)
+{
+    Console.WriteLine(item);
+}
