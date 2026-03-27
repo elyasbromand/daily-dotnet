@@ -10,4 +10,5 @@
   <Project Path="Switch/Switch.csproj" />
   <Project Path="Thread Progress/Thread Progress.csproj" />
   <Project Path="TryParse/TryParse.csproj" />
+  <Project Path="WeatherSimulator/WeatherSimulator.csproj" />
 </Solution>
