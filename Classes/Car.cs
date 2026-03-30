@@ -1,13 +1,15 @@
 namespace Classes
 {
-    internal class Car(string model = "unknown", bool isElectric = false)
+    internal class Car
     {
-        // This is Auto implemented property, it will automatically create a private field to store the value of the property. and at first it will take the constructor parameter and assign it to the property.
-        // public string Model { get; set; } = model;
+        public Car(string model = "unknown", bool isElectric = false)
+        {
+            Model = model;
+            IsElectric = isElectric;
+        }
 
-        // You can also do it manually by creating a private field and a public property to access it
-        private string _model = model;
-        private bool _isElectric = isElectric;
+        private string? _model;
+        private bool _isElectric;
         public string Model
         {
             get
@@ -21,7 +23,7 @@ namespace Classes
             {
                 if (value == "Benz")
                 {
-                    _model = value + "asdf";
+                    _model = value + " asdf";
                 }
                 else
                 {
@@ -38,4 +40,4 @@ namespace Classes
     }
 }
 
-// in the example code above the primary constructore will set the model to whatever is passed, it won't trigger the setter method in property, so if you we want to trigger setter method we can do it manually by creating another constructor that will pass the value to the property. Will be mentioned in next version. 
+// Here is how you use the setter in the construction phase.
