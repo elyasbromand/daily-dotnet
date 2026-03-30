@@ -2,7 +2,8 @@ namespace Classes
 {
     internal class Customers
     {
-        public string? Name { get; set; }
+        // You cam make a property static as well if you want it to be at class level not at object level.
+        public static string? Name { get; set; } = "Taher";
         public string? Email { get; set; }
         public string? Phone { get; set; }
 
@@ -26,6 +27,17 @@ namespace Classes
             Name = "Unknown";
             Email = "Unknown";
             Phone = "Unknown";
+        }
+
+        public static void DisplayName()
+        {
+            Console.WriteLine($"Name is {Name}");
+        }
+
+        //finalizer
+        ~Customers()
+        {
+            Console.WriteLine("Destructor called");
         }
     }
 }
