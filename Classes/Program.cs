@@ -4,10 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Car bmw = new("BMW");
-            Car benz = new("Benz");
+            Car bmw = new("BMW", isElectric: true);
+            Car benz = new("Benz", isElectric: false);
 
-            Console.WriteLine(bmw.Model);
+            Console.WriteLine(benz.Model);
+            Console.WriteLine(benz.IsElectric);
 
             bmw.Model = "asdf";
         }
