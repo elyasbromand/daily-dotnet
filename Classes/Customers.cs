@@ -3,6 +3,15 @@ namespace Classes
     internal class Customers
     {
         // You cam make a property static as well if you want it to be at class level not at object level
+
+        private static int _nextId = 1;
+        public int Id
+        {
+            get => field;
+            // init setter only allows you to set the value of the property during object initialization. You can't change it afterwards.
+            init;
+        }
+
         public static string? Name { get; set; } = "Taher";
         public string? Email { get; set; }
         public string? Phone { get; set; }
@@ -10,6 +19,7 @@ namespace Classes
         // Custom constructor
         public Customers(string name, string email, string phone)
         {
+            Id = _nextId++;
             Name = name;
             Email = email;
             Phone = phone;
@@ -18,12 +28,14 @@ namespace Classes
         // We can have multiple constructors in a class by using method overloading
         public Customers(string name)
         {
+            Id = _nextId++;
             Name = name;
         }
 
         // Default constructor
         public Customers()
         {
+            Id = _nextId++;
             Name = "Unknown";
             Email = "Unknown";
             Phone = "Unknown";

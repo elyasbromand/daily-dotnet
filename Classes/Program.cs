@@ -4,17 +4,14 @@
     {
         static void Main(string[] args)
         {
-            // OperatorOverloading point1 = new(12, 13);
-            // OperatorOverloading point2 = new(2, 15);
+            Customers customer1 = new();
+            Customers customer2 = new();
+            Customers customer3 = new();
 
-            // OperatorOverloading point3 = point1 + point2;
+            Console.WriteLine($"Customer 1 Id is {customer1.Id}");
+            Console.WriteLine($"Customer 2 Id is {customer2.Id}");
+            Console.WriteLine($"Customer 3 Id is {customer3.Id}");
 
-            // Console.Write($"Point3 is at ({point3.Xaxis}, {point3.Yaxis})");
-
-            // calling non-static method within it's own class without creating an object of it.
-
-            new Customers("John Deo").DisplayME();
-            new Customers().DisplayME();
         }
     }
 }
