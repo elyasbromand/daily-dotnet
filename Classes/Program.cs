@@ -13,6 +13,7 @@
 
             // calling non-static method within it's own class without creating an object of it.
 
+            new Customers("John Deo").DisplayME();
             new Customers().DisplayME();
         }
     }

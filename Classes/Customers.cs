@@ -28,7 +28,7 @@ namespace Classes
             Email = "Unknown";
             Phone = "Unknown";
             // this is equavilent to this.ShowME(); thus it works, eventhough I havent' called the ShowME method with an object in program.cs file
-            ShowME();
+            // ShowME();
         }
 
         public static void DisplayName()
@@ -50,9 +50,10 @@ namespace Classes
             ShowME();
         }
 
-        public void ShowME()
+        public static void ShowME()
         {
-            Console.Write("Show Me HEHE");
+            Name = "Changed John Deo";
+            Console.Write("Show Me HEHE " + Name);
         }
     }
 }
