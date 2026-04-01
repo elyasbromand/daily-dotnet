@@ -2,7 +2,7 @@ namespace Classes
 {
     internal class Customers
     {
-        // You cam make a property static as well if you want it to be at class level not at object level.
+        // You cam make a property static as well if you want it to be at class level not at object level
         public static string? Name { get; set; } = "Taher";
         public string? Email { get; set; }
         public string? Phone { get; set; }
@@ -27,6 +27,8 @@ namespace Classes
             Name = "Unknown";
             Email = "Unknown";
             Phone = "Unknown";
+            // this is equavilent to this.ShowME(); thus it works, eventhough I havent' called the ShowME method with an object in program.cs file
+            ShowME();
         }
 
         public static void DisplayName()
@@ -38,6 +40,19 @@ namespace Classes
         ~Customers()
         {
             Console.WriteLine("Destructor called");
+        }
+
+        // non-static methods have access to this keyword
+        public void DisplayME()
+        {
+            Console.WriteLine("Display ME HEHE");
+            // Same here it is also equavilent to this.ShowME(). and this keyword refers to the current instance of the class
+            ShowME();
+        }
+
+        public void ShowME()
+        {
+            Console.Write("Show Me HEHE");
         }
     }
 }
