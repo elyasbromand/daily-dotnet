@@ -11,7 +11,6 @@
             Console.WriteLine($"Customer 1 Id is {customer1.Id}");
             Console.WriteLine($"Customer 2 Id is {customer2.Id}");
             Console.WriteLine($"Customer 3 Id is {customer3.Id}");
-
         }
     }
 }

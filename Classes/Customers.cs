@@ -12,6 +12,14 @@ namespace Classes
             init;
         }
 
+        private string? _password;
+
+        // write-only prop for _password backing field
+        public string Password
+        {
+            set => _password = value;
+        }
+
         public static string? Name { get; set; } = "Taher";
         public string? Email { get; set; }
         public string? Phone { get; set; }
