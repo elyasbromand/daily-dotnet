@@ -10,7 +10,12 @@ namespace QuizApp
 
         public bool IsCorrect(int userChoice)
         {
-            return CorrectAnswerIndex == userChoice;
+            if (CorrectAnswerIndex == userChoice)
+            {
+                Quiz.Score += 1;
+                return true;
+            }
+            return false;
         }
     }
 }

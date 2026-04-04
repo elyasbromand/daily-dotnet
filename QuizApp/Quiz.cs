@@ -2,6 +2,7 @@ namespace QuizApp
 {
     internal class Quiz(Question[] questions)
     {
+        public static int Score { get; set; }
         private readonly Question[] _questions = questions;
 
         public static void DisplayQuestion(Question question)
@@ -49,6 +50,8 @@ namespace QuizApp
                     );
                 Console.WriteLine();
             }
+
+            Console.WriteLine($"Result: {Score} / 2 ");
         }
     }
 }
