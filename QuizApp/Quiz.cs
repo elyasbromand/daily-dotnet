@@ -14,11 +14,6 @@ namespace QuizApp
                 Console.WriteLine($"{i + 1}. {question.Answers[i]}");
                 Console.ResetColor();
             }
-
-            if (question.IsCorrect(GetUserInput()))
-            {
-                Console.WriteLine("Correct!");
-            }
         }
 
         private static int GetUserInput()
@@ -36,9 +31,24 @@ namespace QuizApp
                 input = Console.ReadLine();
             }
 
-            Console.WriteLine(userChoice - 1);
-
             return userChoice - 1;
+        }
+
+        public void StartQuiz()
+        {
+            foreach (Question question in _questions)
+            {
+                DisplayQuestion(question);
+                int userChoice = GetUserInput();
+
+                if (question.IsCorrect(userChoice))
+                    Console.WriteLine("Correct!");
+                else
+                    Console.WriteLine(
+                        $"Incorrect! The correct answer is {question.Answers![question.CorrectAnswerIndex]}"
+                    );
+                Console.WriteLine();
+            }
         }
     }
 }

@@ -12,7 +12,7 @@
 
             Quiz quiz = new(questions);
 
-            Quiz.DisplayQuestion(questions[0]);
+            quiz.StartQuiz();
         }
     }
 }
