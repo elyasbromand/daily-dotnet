@@ -7,6 +7,7 @@
   </Folder>
   <Project Path="calculator1/calculator1.csproj" />
   <Project Path="Classes/Classes.csproj" />
+  <Project Path="ListApp/ListApp.csproj" />
   <Project Path="QuizApp/QuizApp.csproj" />
   <Project Path="RocketProject/RocketProject.csproj" />
   <Project Path="Switch/Switch.csproj" />
