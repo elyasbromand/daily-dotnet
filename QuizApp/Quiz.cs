@@ -5,7 +5,7 @@ namespace QuizApp
         public static int Score { get; set; }
         private readonly Question[] _questions = questions;
 
-        public static void DisplayQuestion(Question question)
+        private static void DisplayQuestion(Question question)
         {
             Console.WriteLine(question.QuestionText);
             //Display the givin answers
