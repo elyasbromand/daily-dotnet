@@ -26,6 +26,11 @@
             {
                 Console.WriteLine(name);
             }
+
+            // Modern Delegate doesn't use Predicate for returning boolean values, instead it uses Func<T, bool> which is more flexible and can be used for various types of delegates.
+            Func<int, bool> check = x => x > 5;
+            Func<int, int> square = x => x * x;
+            Func<int, string> text = x => $"Number: {x}";
         }
     }
 }
