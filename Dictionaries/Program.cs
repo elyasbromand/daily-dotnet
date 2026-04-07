@@ -6,20 +6,30 @@ namespace Dictionaries
     {
         public static void Main(string[] args)
         {
-            Dictionary<int, string[]> employees = [];
+            Dictionary<int, Employee> employees = [];
 
-            employees.Add(100, ["Ahmad", "Doctor"]);
-            employees.Add(101, ["Ali", "Engineer"]);
+            employees.Add(100, new Employee(name: "Ahmad", age: 18, salary: 12000));
 
-            // in the type of employee in foreach loop you can use var
-            // but to actually know what is happening I will add the type
-            // Each element in the Dictionary is KeyValuePair of the same type, so you need to keep that in mind.
-            // You can't use Dictionary<int, string[]> as type of each element since each element is not a dictionary, it is a pair
-
-            foreach (KeyValuePair<int, string[]> employee in employees)
+            foreach (KeyValuePair<int, Employee> employee in employees)
             {
-                Console.WriteLine(employee.Value[0]);
+                Console.WriteLine(employee.Value.Name);
             }
+        }
+    }
+
+    internal class Employee
+    {
+        public string? Name { get; set; }
+        public int Age { get; private set; }
+        public int Salary { get; set; }
+
+        // if you throw an exception mid object creation, object is not being created, thus it is good practice to check before assigning values.
+        public Employee(string name, int age, int salary)
+        {
+            if (age < 18)
+                throw new ArgumentException("You are underage!");
+            Name = name;
+            Salary = salary;
         }
     }
 }
