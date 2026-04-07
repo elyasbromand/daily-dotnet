@@ -11,7 +11,7 @@
                 new Product { Name = "C", Price = 3000 },
             ];
 
-            // the Where method will return a IEnummerable which we then cast it to a list since we are storing it in a list of type Product
+            // the Where method will return a IEnumerable which we then cast it to a list since we are storing it in a list of type Product
 
             List<Product> cheapProduct = productsList
                 .Where(product => product.Price <= 2000)
@@ -23,10 +23,19 @@
                 .Where(product => product.Price <= 2000)
                 .ToList(); ]
             */
+            int? x = 1234;
 
-            foreach (var product in productsList)
+            if (x.HasValue)
             {
-                Console.WriteLine(product);
+                Console.WriteLine(x.Value);
+                foreach (Product product in productsList)
+                {
+                    Console.WriteLine(product);
+                }
+            }
+            else
+            {
+                Console.WriteLine("X is not specified");
             }
         }
     }
