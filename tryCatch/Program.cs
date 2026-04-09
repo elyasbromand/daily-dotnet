@@ -10,7 +10,9 @@ namespace tryCatch
             int? number;
             try
             {
-                number = int.Parse(Console.ReadLine()!);
+                // Look at this, "this null is not null, mr compiler"
+                // I love programming because of these shits which you can do...
+                number = int.Parse(null!);
             }
             catch (IOException ex)
             {
