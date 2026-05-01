@@ -23,7 +23,7 @@ public class Animal
 
 public class Dog : Animal
 {
-    public override void Sound()
+    public sealed override void Sound()
     {
         Console.WriteLine("Dog barks");
     }
