@@ -29,6 +29,15 @@ public class Dog : Animal
     }
 }
 
+public class Bulldog : Dog
+{
+    //error CS0239: 'Bulldog.Sound()': cannot override inherited member 'Dog.Sound()' because it is sealed
+    // public override void Sound()
+    // {
+    //     Console.WriteLine("Bulldog is Woofing");
+    // }
+}
+
 public class Cat : Animal
 {
     public override void Sound()
