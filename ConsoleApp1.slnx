@@ -9,6 +9,7 @@
   <Project Path="Classes/Classes.csproj" />
   <Project Path="Dictionaries/Dictionaries.csproj" />
   <Project Path="Inheritance/Inheritance.csproj" />
+  <Project Path="InterfaceApp/InterfaceApp.csproj" />
   <Project Path="ListApp/ListApp.csproj" />
   <Project Path="QuizApp/QuizApp.csproj" />
   <Project Path="RocketProject/RocketProject.csproj" />

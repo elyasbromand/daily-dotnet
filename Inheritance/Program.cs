@@ -1,6 +1,14 @@
 ﻿namespace PRACTICE.Inheritance
 {
-    public class Program { }
+    public class Program
+    {
+        public static void Main()
+        {
+            Employee joe = new("Joe", 21, 1, "Employee");
+
+            Console.WriteLine("Name: " + joe.Name);
+        }
+    }
 
     public class Person
     {
@@ -14,8 +22,17 @@
         }
     }
 
-    public class Employee(string? name, int age) : Person(name, age)
+    public class Employee : Person
     {
-        
+        public int EmployeeId { get; private set; }
+
+        public string Position { get; private set; }
+
+        public Employee(string? name, int age, int employeeId, string position)
+            : base($"EMP-{name}", age)
+        {
+            EmployeeId = employeeId;
+            Position = position;
+        }
     }
 }
