@@ -1,47 +1,22 @@
-﻿using System.Net.Sockets;
-using System.Reflection.Metadata;
-using System.Security.Cryptography.X509Certificates;
-
-namespace Inheritance;
-
-public class Program
+﻿namespace PRACTICE.Inheritance
 {
-    public static void Main(string[] args)
+    public class Program { }
+
+    public class Person
     {
-        Animal dog = new Dog();
-        dog.Sound();
+        public string? Name { get; private set; }
+        public int Age { get; private set; }
+
+        public Person(string? name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
     }
-}
 
-public class Animal
-{
-    public virtual void Sound()
+    public class Employee : Person
     {
-        Console.WriteLine("Animal makes a sound");
-    }
-}
-
-public class Dog : Animal
-{
-    public sealed override void Sound()
-    {
-        Console.WriteLine("Dog barks");
-    }
-}
-
-public class Bulldog : Dog
-{
-    //error CS0239: 'Bulldog.Sound()': cannot override inherited member 'Dog.Sound()' because it is sealed
-    // public override void Sound()
-    // {
-    //     Console.WriteLine("Bulldog is Woofing");
-    // }
-}
-
-public class Cat : Animal
-{
-    public override void Sound()
-    {
-        base.Sound();
+        public Employee(string? name, int age)
+            : base(name, age) { }
     }
 }
