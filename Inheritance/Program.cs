@@ -14,9 +14,8 @@
         }
     }
 
-    public class Employee : Person
+    public class Employee(string? name, int age) : Person(name, age)
     {
-        public Employee(string? name, int age)
-            : base(name, age) { }
+        
     }
 }
