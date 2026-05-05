@@ -1,50 +1,51 @@
 ﻿namespace InterfaceApp;
 
-public interface IAnimal
+public interface IPaymentProcessor
 {
-    public int MyProperty { get; set; }
-    void MakeSound()
-    {
-        Console.WriteLine(
-            "In modern C# interfaces, you can have method implementations, but you can also have abstract methods that must be implemented by the class that implements the interface."
-        );
-    }
-
-    // you can also have static members in interfaces, but the must have an implementation
-    static int version = 1;
+    void ProcessPayment(decimal amount);
 }
 
-public class Dog : IAnimal
+public class CreditCardProcessor : IPaymentProcessor
 {
-    public static int DogVersion => 222;
-    public int MyProperty
+    public void ProcessPayment(decimal amount)
     {
-        get;
-        set => throw new NotImplementedException();
+        Console.WriteLine($"Processing credit card payment of {amount}");
     }
+}
 
-    public void MakeSound()
+public class PayPalProcessor : IPaymentProcessor
+{
+    public void ProcessPayment(decimal amount)
     {
-        throw new WhyAreYouNotImplementingException("Stupid bitch, implement the method");
+        Console.WriteLine($"Processing PayPal payment of {amount}");
+    }
+}
+
+public class PaymentService(IPaymentProcessor paymentProcessor)
+{
+    // this field is of type IPaymentProcessor, which is an interface. This allows us to use any class that implements this interface, such as CreditCardProcessor or PayPalProcessor.
+    private readonly IPaymentProcessor _paymentProcessor = paymentProcessor;
+
+    public void OrderPayment(decimal amount)
+    {
+        _paymentProcessor.ProcessPayment(amount);
     }
 }
 
 public class Program
 {
-    public static void Main()
+    public static void Main(string[] args)
     {
-        Dog d = new();
-        try
-        {
-            Console.WriteLine(IAnimal.version);
-            Console.WriteLine(Dog.DogVersion);
-            d.MakeSound();
-        }
-        catch (WhyAreYouNotImplementingException)
-        {
-            Console.WriteLine(
-                "gonna catch it, not letting the user see our humorous exception message"
-            );
-        }
+        // we can create an instance of CreditCardProcessor and pass it to the PaymentService,
+        // or we can create an instance of PayPalProcessor and pass it to the PaymentService,
+        // without changing the PaymentService code.
+        IPaymentProcessor creditCardProcessor = new CreditCardProcessor();
+        IPaymentProcessor payPalProcessor = new PayPalProcessor();
+
+        PaymentService paymentService1 = new PaymentService(creditCardProcessor);
+        PaymentService paymentService2 = new PaymentService(payPalProcessor);
+
+        paymentService1.OrderPayment(100.21m);
+        paymentService2.OrderPayment(200.21m);
     }
 }
