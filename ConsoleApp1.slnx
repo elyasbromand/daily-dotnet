@@ -11,6 +11,7 @@
   <Project Path="Inheritance/Inheritance.csproj" />
   <Project Path="InterfaceApp/InterfaceApp.csproj" />
   <Project Path="ListApp/ListApp.csproj" />
+  <Project Path="Logging/Logging.csproj" />
   <Project Path="QuizApp/QuizApp.csproj" />
   <Project Path="RocketProject/RocketProject.csproj" />
   <Project Path="Switch/Switch.csproj" />
