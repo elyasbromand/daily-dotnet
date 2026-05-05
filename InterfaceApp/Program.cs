@@ -3,11 +3,20 @@
 public interface IAnimal
 {
     public int MyProperty { get; set; }
-    void MakeSound();
+    void MakeSound()
+    {
+        Console.WriteLine(
+            "In modern C# interfaces, you can have method implementations, but you can also have abstract methods that must be implemented by the class that implements the interface."
+        );
+    }
+
+    // you can also have static members in interfaces, but the must have an implementation
+    static int version = 1;
 }
 
 public class Dog : IAnimal
 {
+    public static int DogVersion => 222;
     public int MyProperty
     {
         get;
@@ -27,6 +36,8 @@ public class Program
         Dog d = new();
         try
         {
+            Console.WriteLine(IAnimal.version);
+            Console.WriteLine(Dog.DogVersion);
             d.MakeSound();
         }
         catch (WhyAreYouNotImplementingException)
